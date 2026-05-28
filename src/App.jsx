@@ -58,7 +58,8 @@ function App() {
             transition={{ delay: 0.3 }}
             className="text-5xl sm:text-7xl font-bold text-white mb-4 tracking-tight"
           >
-            Malgudi
+            Malgudi dosa
+            
           </motion.h1>
 
           <motion.p 
