@@ -40,6 +40,6 @@ export const IMG = {
   dishIdliPodi: img('dish-idli-podi.webp'),
   dishVadaIdli: img('dish-vada-idli.webp'),
   dishMasalaDosaClose: img('dish-masala-dosa-close.webp'),
-  heroVideo: img('Malgudi Final Render.mp4'),
+  heroVideo: img('Malgudi Final Render_without Logo.mp4'),
   footerBg: '/Group%2090.png',
 };

@@ -1,3 +1,5 @@
+'use client';
+
 import  { useState, useEffect } from 'react';
 import { Store, MapPin } from 'lucide-react';
 import { IMG } from '@/lib/images';
@@ -165,16 +167,25 @@ export default function StoresSection({
 
         {/* Delivery partners */}
         {showDeliveryPartners && (
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {PARTNERS.map((p) => (
               <a
                 key={p.id}
                 href={p.href}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full px-5 py-3 rounded-md bg-[#E87B33] hover:bg-[#C25E1F] text-white text-sm sm:text-base font-medium transition-colors text-center"
+                className="w-full px-5 py-3 rounded-md bg-[#E87B33] hover:bg-[#C25E1F] text-white text-sm sm:text-base font-medium transition-colors flex items-center justify-center gap-2"
               >
-                Order on <span className="font-bold italic">{p.label}</span>
+                {p.logo && (
+                  <img
+                    src={p.logo}
+                    alt=""
+                    aria-hidden
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                    className="h-5 sm:h-6 w-auto object-contain"
+                  />
+                )}
+                <span>Order on <span className="font-bold italic">{p.label}</span></span>
               </a>
             ))}
           </div>
