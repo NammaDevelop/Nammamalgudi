@@ -1,3 +1,6 @@
+'use client';
+
+import Link from 'next/link';
 import { Phone, Mail } from 'lucide-react';
 import { IMG } from '@/lib/images';
 
@@ -20,13 +23,13 @@ const YoutubeIcon = (props) => (
 );
 
 const TABS = [
-  { id: 'home', label: 'Home' },
-  { id: 'menu', label: 'Menu' },
-  { id: 'story', label: 'Our Story' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'home', label: 'Home', href: '/' },
+  { id: 'menu', label: 'Menu', href: '/menu' },
+  { id: 'story', label: 'Our Story', href: '/story' },
+  { id: 'contact', label: 'Contact', href: '/contact' },
 ];
 
-export default function Footer({ onNavigate }) {
+export default function Footer() {
   return (
     <footer
       className="relative bg-[#1F4D2C] text-white/85 bg-cover bg-center bg-no-repeat"
@@ -36,9 +39,9 @@ export default function Footer({ onNavigate }) {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-14 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
         {/* Brand */}
         <div>
-          <button onClick={() => onNavigate('home')} className="inline-block rounded-xl p-2.5">
+          <Link href="/" className="inline-block rounded-xl p-2.5">
             <img src={IMG.logo} alt="Namma Malgudi" className="h-12 sm:h-24 w-auto" />
-          </button>
+          </Link>
           <p className="mt-4 text-sm text-white/70 max-w-xs">
             Fresh Batter. Hot Plates. True Taste.<br />
             Serving Authentic South Indian Food With Love And Tradition Since 2018.
@@ -51,9 +54,9 @@ export default function Footer({ onNavigate }) {
           <ul className="mt-4 space-y-2 text-sm">
             {TABS.map((t) => (
               <li key={t.id}>
-                <button onClick={() => onNavigate(t.id)} className="hover:text-[#F4A261] transition-colors">
+                <Link href={t.href} className="hover:text-[#F4A261] transition-colors">
                   {t.label}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>

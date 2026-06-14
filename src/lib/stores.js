@@ -20,18 +20,15 @@ export const STORE_EMBED_QUERIES = {
 };
 
 // Delivery / ordering partner links. Swiggy & Zomato point at confirmed Namma
-// Malgudi listings in Bhilai. South Kitchen — drop the actual URL here when ready.
+// Malgudi listings in Bhilai.
 export const PARTNER_LINKS = {
   swiggy:
     'https://www.swiggy.com/restaurants/malgudi-nehru-nagar-east-junwani-road-smriti-nagar-bhilai-99688',
   zomato: 'https://www.zomato.com/durg-bhilai/malgudi-nehru-nagar/order',
-  southKitchen:
-    'https://www.google.com/search?q=' +
-    encodeURIComponent('South Kitchen Bhilai Namma Malgudi order online'),
 };
 
+// `logo` points at a raster image in /public — drop swiggy.png & zomato.png there.
 export const PARTNERS = [
-  { id: 'swiggy', label: 'Swiggy', href: PARTNER_LINKS.swiggy },
-  { id: 'zomato', label: 'zomato', href: PARTNER_LINKS.zomato },
-  { id: 'south-kitchen', label: 'South Kitchen', href: PARTNER_LINKS.southKitchen },
+  { id: 'swiggy', label: 'Swiggy', href: PARTNER_LINKS.swiggy, logo: '/swiggy.png' },
+  { id: 'zomato', label: 'Zomato', href: PARTNER_LINKS.zomato, logo: '/zomato.png' },
 ];
